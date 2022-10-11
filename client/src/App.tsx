@@ -1,13 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {BrowserRouter as Router, Routes ,Route} from 'react-router-dom'
+import CallPage from "./pages/CallPage/CallPage";
+import HomePage from "./pages/HomePage/HomePage";
+import NoMatch from "./pages/NoMatch/NoMatch";
 
 const App:React.FC = () => {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/:id" element={<CallPage />} />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </Router>
   );
 }
 
