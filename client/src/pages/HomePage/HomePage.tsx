@@ -1,8 +1,10 @@
+import Header from "../../layouts/Header";
+
 const HomePage = () => {
     return(
         <>
             <div>
-                asdsa
+                <Header />
             </div>
         </>
     )
