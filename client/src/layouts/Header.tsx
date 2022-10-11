@@ -8,9 +8,7 @@ const Header = () => {
       <nav className="bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-
             <div className="flex items-center">
-
               {/* Logo */}
               <div className="flex-shrink-0">
                 <img
@@ -59,18 +57,17 @@ const Header = () => {
                   </a>
                 </div>
               </div>
-
             </div>
 
             {/* Nav Button */}
             <div className="hidden md:block">
               <div>
-              <button className="border hover:bg-gray-700 text-white mx-2 py-1 px-3 rounded">
-                Login
-              </button>
-              <button className="border hover:bg-gray-700 text-white mx-2 py-1 px-3 rounded">
-                Register
-              </button>
+                <button className="border hover:bg-gray-700 text-white mx-2 py-1 px-3 rounded">
+                  Login
+                </button>
+                <button className="border hover:bg-gray-700 text-white mx-2 py-1 px-3 rounded">
+                  Register
+                </button>
               </div>
             </div>
 
@@ -169,16 +166,19 @@ const Header = () => {
                   Reports
                 </a>
                 <hr />
-                <button className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</button>
-                <button className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Register</button>
+                <button className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Login
+                </button>
+                <button className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Register
+                </button>
               </div>
             </div>
           )}
         </Transition>
       </nav>
-
     </div>
   );
-}
+};
 
 export default Header;

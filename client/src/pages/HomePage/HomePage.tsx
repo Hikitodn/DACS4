@@ -4,17 +4,19 @@ import Header from "../../layouts/Header";
 import Content from "../../components/Content";
 
 const HomePage = () => {
-    return(
-        <div>
-            <Header />
+  return (
+    <div>
+      <Header />
 
-            <Hero />
+      <Hero />
 
-            <Content content="container" img_link="asdasdasd" />
+      <Content contentClass="" contentText="" imgClass="" imgLink="" />
+      <Content contentClass="" contentText="" imgClass="" imgLink="" />
+      <Content contentClass="" contentText="" imgClass="" imgLink="" />
 
-            <Footer />
-        </div>
-    )
-}
+      <Footer />
+    </div>
+  );
+};
 
 export default HomePage;

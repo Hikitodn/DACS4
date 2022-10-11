@@ -1,10 +1,10 @@
 import React from "react";
-import {BrowserRouter as Router, Routes ,Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CallPage from "./pages/CallPage/CallPage";
 import HomePage from "./pages/HomePage/HomePage";
 import NoMatch from "./pages/NoMatch/NoMatch";
 
-const App:React.FC = () => {
+const App: React.FC = () => {
   return (
     <Router>
       <Routes>
@@ -14,6 +14,6 @@ const App:React.FC = () => {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

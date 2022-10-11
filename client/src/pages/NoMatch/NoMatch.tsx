@@ -1,11 +1,9 @@
 const NoMatch = () => {
-    return(
-        <>
-            <div>
-                asdsa
-            </div>
-        </>
-    )
-}
+  return (
+    <>
+      <div>asdsa</div>
+    </>
+  );
+};
 
 export default NoMatch;
