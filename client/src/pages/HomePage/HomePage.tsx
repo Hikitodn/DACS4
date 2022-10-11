@@ -1,6 +1,7 @@
-import Hero from "../../components/Hero";
+import Hero from "../../layouts/MainHero";
 import Footer from "../../layouts/Footer";
 import Header from "../../layouts/Header";
+import Content from "../../components/Content";
 
 const HomePage = () => {
     return(
@@ -8,6 +9,8 @@ const HomePage = () => {
             <Header />
 
             <Hero />
+
+            <Content content="container" img_link="asdasdasd" />
 
             <Footer />
         </div>

@@ -4,6 +4,7 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl">
         <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
 
+          {/* Main Content */}
           <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
@@ -34,9 +35,12 @@ export default function Hero() {
               </div>
             </div>
           </main>
+          {/* Main Content */}
           
         </div>
       </div>
+
+      {/* Image */}
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
