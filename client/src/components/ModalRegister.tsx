@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const Login = () => {
+const ModalRegister = () => {
   return (
     <>
       <button className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-        Login
+        ModalRegister
       </button>
     </>
   );
 };
 
-export default Login;
+export default ModalRegister;

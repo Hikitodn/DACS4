@@ -15,10 +15,12 @@ const Content: React.FC<Att> = ({
 }) => {
   return (
     <>
-      <div className="flex justify-center">
-        <div className={contentClass}>{contentText}</div>
+      <div className="container flex justify-center">
+        <div className={contentClass}>
+          <span>{contentText}</span>
+        </div>
         <div className={imgClass}>
-          <img src={imgLink} alt={imgLink} />
+          <img src={imgLink} alt="untitled" />
         </div>
       </div>
     </>
