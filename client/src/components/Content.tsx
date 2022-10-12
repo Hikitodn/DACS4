@@ -15,7 +15,7 @@ const Content: React.FC<Att> = ({
 }) => {
   return (
     <>
-      <div className="container flex justify-center">
+      <div className="flex justify-center">
         <div className={contentClass}>
           <span>{contentText}</span>
         </div>

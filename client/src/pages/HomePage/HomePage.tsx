@@ -12,9 +12,10 @@ const HomePage = () => {
       <Hero />
 
       <Content
-        contentClass=""
-        contentText="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        imgClass=""
+        contentClass="flex"
+        contentText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, minus! Eum, expedita?
+        "
+        imgClass="float-right w-1/4"
         imgLink={ContentImg}
       />
       <Content contentClass="" contentText="" imgClass="" imgLink="" />
