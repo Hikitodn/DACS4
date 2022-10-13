@@ -15,7 +15,7 @@ const Content: React.FC<Att> = ({
 }) => {
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center py-8 w-auto">
         <div className={contentClass}>
           <span>{contentText}</span>
         </div>
