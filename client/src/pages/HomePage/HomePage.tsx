@@ -1,17 +1,17 @@
-import Hero from "../../layouts/MainHero";
+import MainHero from "../../layouts/MainHero";
 import Footer from "../../layouts/Footer";
 import Header from "../../layouts/Header";
 import Content from "../../components/Content";
-import ContentImg from "../../assets/images/content.jpg";
+import { Img01, Img02, Img03 } from "../../assets/images/index";
 
 const HomePage = () => {
   return (
     <div>
       <Header />
 
-      <Hero />
+      <MainHero />
 
-      <div className="px-8">
+      <div className="px-8 py-2">
         <div className="flex flex-col text-center justify-center py-5 px-8">
           <span className="text-4xl font-mono font-bold">
             Etiam nulla lectus amet
@@ -19,28 +19,35 @@ const HomePage = () => {
           <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
         </div>
 
-        <Content
-          contentClass="w-2/4"
-          contentText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, minus! Eum, expedita?
-        "
-          imgClass="w-1/4"
-          imgLink={ContentImg}
-        />
-        <Content
-          contentClass="w-2/4"
-          contentText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, minus! Eum, expedita?
-          
-        "
-          imgClass="w-1/4"
-          imgLink={ContentImg}
-        />
-        <Content
-          contentClass="w-2/4"
-          contentText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, minus! Eum, expedita?
-        "
-          imgClass="w-1/4"
-          imgLink={ContentImg}
-        />
+        <div className="flex flex-col-reverse md:flex-row justify-center py-8 w-auto">
+          <Content
+            contentClass="md:w-2/4 text-center text-sm py-2 md:py-0 md:text-left px-2"
+            contentText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores officia dolorem enim. Dicta, recusandae. Obcaecati quam nesciunt sint vel voluptatem iusto perspiciatis error sunt facilis asperiores, dolorem, dicta quaerat? Vitae?
+          "
+            imgClass="md:w-1/4"
+            imgLink={Img01}
+          />
+        </div>
+
+        <div className="flex flex-col-reverse md:flex-row-reverse justify-center py-8 w-auto">
+          <Content
+            contentClass="md:w-2/4 text-center text-sm py-2 md:py-0 md:text-left px-2 md:ml-5"
+            contentText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores officia dolorem enim. Dicta, recusandae. Obcaecati quam nesciunt sint vel voluptatem iusto perspiciatis error sunt facilis asperiores, dolorem, dicta quaerat? Vitae?
+          "
+            imgClass="md:w-1/4"
+            imgLink={Img02}
+          />
+        </div>
+
+        <div className="flex flex-col-reverse md:flex-row justify-center py-8 w-auto">
+          <Content
+            contentClass="md:w-2/4 text-center text-sm py-2 md:py-0 md:text-left px-2"
+            contentText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores officia dolorem enim. Dicta, recusandae. Obcaecati quam nesciunt sint vel voluptatem iusto perspiciatis error sunt facilis asperiores, dolorem, dicta quaerat? Vitae?
+          "
+            imgClass="md:w-1/4"
+            imgLink={Img03}
+          />
+        </div>
       </div>
 
       <Footer />
