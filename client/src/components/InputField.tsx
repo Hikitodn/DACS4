@@ -5,8 +5,8 @@ interface Att {
 
 const InputField: React.FC<Att> = ({ type, name }) => {
   return (
-    <div>
-      <input type={type} name={name} id="" />
+    <div className="px-2">
+      <input className="border" type={type} name={name} id="" />
     </div>
   );
 };

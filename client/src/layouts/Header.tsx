@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
+import ModalLogin from "./ModalLogin";
+import ModalRegister from "./ModalRegister";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,12 +64,8 @@ const Header = () => {
             {/* Nav Button */}
             <div className="hidden md:block">
               <div>
-                <button className="border hover:bg-gray-700 text-white mx-2 py-1 px-3 rounded">
-                  Login
-                </button>
-                <button className="border hover:bg-gray-700 text-white mx-2 py-1 px-3 rounded">
-                  Register
-                </button>
+                <ModalLogin />
+                {/* <ModalRegister /> */}
               </div>
             </div>
 
@@ -166,9 +164,7 @@ const Header = () => {
                   Reports
                 </a>
                 <hr />
-                <button className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Login
-                </button>
+                <ModalLogin />
                 <button className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Register
                 </button>
