@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
 import ModalLogin from "./ModalLogin";
-import ModalRegister from "./ModalRegister";
+// import ModalRegister from "./ModalRegister";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
