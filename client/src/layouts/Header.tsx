@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
-import ModalLogin from "./ModalLogin";
-// import ModalRegister from "./ModalRegister";
+import ModalLogin from "../components/ModalLogin";
+import ModalRegister from "../components/ModalRegister";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,9 +63,9 @@ const Header = () => {
 
             {/* Nav Button */}
             <div className="hidden md:block">
-              <div>
+              <div className="flex">
                 <ModalLogin />
-                {/* <ModalRegister /> */}
+                <ModalRegister />
               </div>
             </div>
 

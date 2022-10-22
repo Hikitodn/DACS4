@@ -1,13 +1,13 @@
 import React from "react";
 
-interface Att {
+interface Props {
   contentClass?: string;
   imgClass?: string;
   imgLink?: string;
   contentText?: string;
 }
 
-const Content: React.FC<Att> = ({
+const Content: React.FC<Props> = ({
   contentClass,
   imgClass,
   imgLink,
