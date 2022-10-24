@@ -8,10 +8,14 @@ interface Props {
 }
 
 const LoginForm: React.FC<Props> = ({ children }) => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <h1 className="text-center font-sans font-extrabold">Login</h1>
-      <form action="" method="post">
+      <form action="" method="get" onSubmit={(e) => handleSubmit(e)}>
         <div className="px-2 my-3">
           <TextInput
             className="my-3"
@@ -25,7 +29,9 @@ const LoginForm: React.FC<Props> = ({ children }) => {
           />
         </div>
         <div className="flex justify-end">
-          <Button className="bg-blue-500 mx-1">Login</Button>
+          <Button type="submit" className="bg-blue-500 mx-1">
+            Login
+          </Button>
           {children}
         </div>
       </form>
