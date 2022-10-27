@@ -4,6 +4,8 @@ import http from "http";
 import bodyParser from "body-parser";
 import cors from "cors";
 import { router as Routes } from "./routes/routes";
+import { socketManager } from "./listeners/socketManagement";
+import { Server } from "socket.io";
 
 // Config PORT
 dotenv.config();
@@ -11,7 +13,7 @@ const port = process.env.PORT;
 
 // Setup Server
 const app = express();
-const server = http.createServer(app);
+const serverMain = http.createServer(app);
 app.use([
   cors(),
   bodyParser.json(),
@@ -19,7 +21,10 @@ app.use([
   Routes,
 ]);
 
+const io = new Server();
+io.on("connection", socketManager);
+
 // Server run
-server.listen(port, () => {
+serverMain.listen(port, () => {
   console.log(`Server is running on port http://localhost:${port}`);
 });
