@@ -1,9 +1,9 @@
 import { Socket } from "socket.io";
 
-const socketManager = (socket: Socket) => {
+export = (socket: Socket) => {
   try {
     console.log("Connected");
-    socket.on("code", (data, callback) => {
+    socket.on("code", (data, _callback) => {
       socket.broadcast.emit("code", data);
     });
   } catch (e) {
@@ -12,5 +12,3 @@ const socketManager = (socket: Socket) => {
     }
   }
 };
-
-export { socketManager };

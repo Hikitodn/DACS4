@@ -3,8 +3,8 @@ import express from "express";
 import http from "http";
 import bodyParser from "body-parser";
 import cors from "cors";
-import { router as Routes } from "./routes/routes";
-import { socketManager } from "./listeners/socketManagement";
+import Routes from "./routes/routes";
+import socketManager from "./listeners/socketManagement";
 import { Server } from "socket.io";
 
 // Config PORT
@@ -13,7 +13,6 @@ const port = process.env.PORT;
 
 // Setup Server
 const app = express();
-const serverMain = http.createServer(app);
 app.use([
   cors(),
   bodyParser.json(),
@@ -21,10 +20,11 @@ app.use([
   Routes,
 ]);
 
-const io = new Server();
+const serverMain = http.createServer(app);
+const io = new Server(serverMain, { cors: { origin: "*" } });
 io.on("connection", socketManager);
 
 // Server run
 serverMain.listen(port, () => {
-  console.log(`Server is running on port http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });
