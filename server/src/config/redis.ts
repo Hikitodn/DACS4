@@ -1,8 +1,7 @@
-import { createClient } from "redis";
+const Redis = require("redis");
 
-const client = createClient();
+const client = Redis.createClient();
 
-client.connect();
-client.on("error", (err) => console.log(err));
+client.on("error", (err: any) => console.log(err));
 
 export default client;

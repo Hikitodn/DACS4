@@ -4,7 +4,7 @@ import { saveCall, getCall } from "../models/model";
 export const saveCallId = async (req: Request, res: Response) => {
   try {
     const { id, signalData } = req.body;
-    saveCall(id, signalData);
+    await saveCall(id, signalData);
     res.status(200).send(true);
   } catch (e) {
     if (e instanceof Error) {
@@ -16,11 +16,11 @@ export const saveCallId = async (req: Request, res: Response) => {
 export const getCallId = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const code = getCall(id);
+    const code = await getCall(id);
     res.status(200).send({ code });
   } catch (e) {
     if (e instanceof Error) {
-      return res.status(400).send(e.message);
+      res.status(400).send(e.message);
     }
   }
 };

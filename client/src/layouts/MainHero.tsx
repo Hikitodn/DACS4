@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+import shortid from "shortid";
+
 export default function MainHero() {
+  const navigate = useNavigate();
+  const startCall = () => {
+    const uid = shortid.generate();
+    navigate(`/${uid}#init`);
+  };
+
   return (
     <div className="relative overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl">
@@ -19,19 +28,19 @@ export default function MainHero() {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
-                  <a
-                    href="#!"
+                  <button
+                    onClick={startCall}
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
                   >
-                    Get started
-                  </a>
+                    Live demo
+                  </button>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <a
                     href="#!"
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-100 px-8 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200 md:py-4 md:px-10 md:text-lg"
                   >
-                    Live demo
+                    Enter Room Code
                   </a>
                 </div>
               </div>

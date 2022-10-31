@@ -1,7 +1,12 @@
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const MeetingInfo = () => {
+interface Props {
+  setMeetInfoPopup: React.Dispatch<React.SetStateAction<boolean>>;
+  url: string;
+}
+
+const MeetingInfo: React.FC<Props> = ({ setMeetInfoPopup, url }) => {
   return (
     <div className="absolute top-12 left-12 bg-white rounded p-6 w-96">
       <div className="flex items-center justify-between text-gray-900">
@@ -9,6 +14,9 @@ const MeetingInfo = () => {
         <FontAwesomeIcon
           className="cursor-pointer text-xl"
           icon={solid("times")}
+          onClick={() => {
+            setMeetInfoPopup(false);
+          }}
         />
       </div>
       <button className="flex items-center justify-center bg-green-700 p-2 text-white text-base rounded-md outline-none my-3">
@@ -20,11 +28,12 @@ const MeetingInfo = () => {
       </p>
       <div className="flex items-center justify-between bg-slate-100 p-3 rounded">
         <span className="text-sm font-semibold outline-none bg-none flex-1 text-gray-600">
-          Some random URL
+          {url}
         </span>
         <FontAwesomeIcon
           className="cursor-pointer text-gray-600"
           icon={solid("copy")}
+          onClick={() => navigator.clipboard.writeText(url)}
         />
       </div>
       <div className="flex items-center justify-center my-3">
@@ -37,7 +46,9 @@ const MeetingInfo = () => {
           can join
         </p>
       </div>
-      <p className="text-gray-900 text-sm">Joined as blabla</p>
+      <p className="text-gray-900 text-sm">
+        Joined as <b>example@gmail.com</b>
+      </p>
     </div>
   );
 };

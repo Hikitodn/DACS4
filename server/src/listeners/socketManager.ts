@@ -3,7 +3,7 @@ import { Socket } from "socket.io";
 export = (socket: Socket) => {
   try {
     console.log("Connected");
-    socket.on("code", (data, _callback) => {
+    socket.on("code", (data, callback) => {
       socket.broadcast.emit("code", data);
     });
   } catch (e) {
