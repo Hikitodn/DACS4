@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const postRequest = async (url: any, payload = {}) => {
+export const postRequest = async (url: string, payload = {}) => {
   const data = await axios
     .post(url, payload)
     .then((resp) => resp.data)
@@ -8,7 +8,7 @@ export const postRequest = async (url: any, payload = {}) => {
   return data;
 };
 
-export const putRequest = async (url: any, payload = {}) => {
+export const putRequest = async (url: string, payload = {}) => {
   const data = await axios
     .put(url, payload)
     .then((resp) => resp.data)
@@ -16,7 +16,7 @@ export const putRequest = async (url: any, payload = {}) => {
   return data;
 };
 
-export const getRequest = async (url: any, payload = {}) => {
+export const getRequest = async (url: string, payload = {}) => {
   const data = await axios
     .get(url, payload)
     .then((resp) => resp.data)
@@ -24,7 +24,7 @@ export const getRequest = async (url: any, payload = {}) => {
   return data;
 };
 
-export const deleteRequest = async (url: any, payload = {}) => {
+export const deleteRequest = async (url: string, payload = {}) => {
   const data = await axios
     .delete(url, payload)
     .then((resp) => resp.data)

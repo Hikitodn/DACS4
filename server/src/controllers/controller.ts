@@ -3,8 +3,8 @@ import { saveCall, getCall } from "../models/model";
 
 export const saveCallId = async (req: Request, res: Response) => {
   try {
-    const { id, signalData } = req.body;
-    await saveCall(id, signalData);
+    let { id, signalData } = req.body;
+    saveCall(id, signalData);
     res.status(200).send(true);
   } catch (e) {
     if (e instanceof Error) {
@@ -15,8 +15,8 @@ export const saveCallId = async (req: Request, res: Response) => {
 
 export const getCallId = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
-    const code = await getCall(id);
+    let { id } = req.params;
+    const code = getCall(id);
     res.status(200).send({ code });
   } catch (e) {
     if (e instanceof Error) {

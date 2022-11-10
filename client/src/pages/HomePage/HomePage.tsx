@@ -4,7 +4,7 @@ import Header from "../../layouts/Header";
 import Content from "../../components/Content";
 import { Img01, Img02, Img03 } from "../../assets/images/index";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <div>
       <Header />

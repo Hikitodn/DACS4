@@ -1,8 +1,9 @@
 import { Socket } from "socket.io";
 
-export = (socket: Socket) => {
+export const socket = (socket: Socket) => {
   try {
     console.log("Connected");
+    socket.emit("Connected to video chat room");
     socket.on("code", (data, callback) => {
       socket.broadcast.emit("code", data);
     });

@@ -4,7 +4,7 @@ import http from "http";
 import bodyParser from "body-parser";
 import cors from "cors";
 import Routes from "./routes/routes";
-import socketManager from "./listeners/socketManager";
+import { socket } from "./listeners/socketManager";
 import { Server } from "socket.io";
 
 // Config PORT
@@ -22,7 +22,7 @@ app.use([
 
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
-io.on("connection", socketManager);
+io.on("connection", socket);
 
 // Server run
 server.listen(port, () => {

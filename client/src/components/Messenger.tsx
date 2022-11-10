@@ -1,8 +1,35 @@
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TextInput } from "@mantine/core";
+import moment from "moment";
+import { SetStateAction, useState } from "react";
 
-const Messenger = () => {
+interface Props {
+  setIsMessenger: React.Dispatch<React.SetStateAction<boolean>>;
+  sendMsg: any;
+  messageList: any;
+}
+
+const Messenger: React.FC<Props> = ({
+  setIsMessenger,
+  sendMsg,
+  messageList,
+}) => {
+  const [msg, setMsg] = useState<string>("");
+
+  const handleChangeMsg = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
+    setMsg(e.target.value);
+  };
+
+  const handleKeyDown = (e: { key: string }) => {
+    if (e.key === "Enter") {
+      sendMsg(msg);
+      setMsg("");
+    }
+  };
+
   return (
     <div className="absolute top-0 right-0 bg-white h-[calc(100vh-90px)] w-80 box-border flex justify-between flex-col">
       <div className="p-4 flex items-center justify-between my-2">
@@ -10,6 +37,9 @@ const Messenger = () => {
         <FontAwesomeIcon
           className="cursor-pointer text-xl"
           icon={solid("times")}
+          onClick={() => {
+            setIsMessenger(false);
+          }}
         />
       </div>
 
@@ -25,14 +55,17 @@ const Messenger = () => {
       </div>
 
       <div className="p-5 flex-1 overflow-y-scroll">
-        <div className="mb-7">
-          <div className="font-medium text-sm">
-            you <small className="ml-1 font-light">10 PM</small>
-          </div>
-          <p className="m-0 pt-1 text-gray-700 text-sm">
-            Here comes a actual message
-          </p>
-        </div>
+        {messageList.map((item: any) => {
+          <div key={item.time} className="mb-7">
+            <div className="font-medium text-sm">
+              {item.user}{" "}
+              <small className="ml-1 font-light">
+                {moment(item.time).format("h:mm A")}
+              </small>
+            </div>
+            <p className="m-0 pt-1 text-gray-700 text-sm">{item.msg}</p>
+          </div>;
+        })}
       </div>
 
       <div className="p-5 border-y border-slate-200 flex items-center justify-between text-gray-700">
@@ -41,6 +74,9 @@ const Messenger = () => {
           icon={<FontAwesomeIcon icon={solid("paper-plane")} />}
           placeholder="Enter your message"
           variant="filled"
+          value={msg}
+          onChange={(e) => handleChangeMsg(e)}
+          onKeyDown={(e) => handleKeyDown(e)}
         />
       </div>
     </div>

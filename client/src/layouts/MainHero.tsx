@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import shortid from "shortid";
 
-export default function MainHero() {
+const MainHero: React.FC = () => {
   const navigate = useNavigate();
   const startCall = () => {
     const uid = shortid.generate();
@@ -60,4 +60,6 @@ export default function MainHero() {
       </div>
     </div>
   );
-}
+};
+
+export default MainHero;
